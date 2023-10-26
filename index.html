@@ -276,7 +276,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-26 11:21:21" itemprop="dateModified" datetime="2023-10-26T11:21:21+08:00">2023-10-26</time>
+                <time title="Modified: 2023-10-26 20:33:53" itemprop="dateModified" datetime="2023-10-26T20:33:53+08:00">2023-10-26</time>
               </span>
 
           <br>
@@ -285,7 +285,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>436</span>
+              <span>824</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -309,18 +309,20 @@
 
 <h2 id="Second-Chapter-Basic-Grammar"><a href="#Second-Chapter-Basic-Grammar" class="headerlink" title="Second Chapter: Basic Grammar"></a>Second Chapter: Basic Grammar</h2><h3 id="一-字面量-被写下来固定的值"><a href="#一-字面量-被写下来固定的值" class="headerlink" title="一 字面量 : 被写下来固定的值"></a>一 字面量 : 被写下来固定的值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在计算机科学中，字面量（literal）是用于表达源代码中一个固定值的表示法（notation）</span></span><br><span class="line"><span class="comment"># 字面量是指由字母，数字等构成的字符串或者数值，它只能作为右值出现</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2023/10/25/Python-Learning/type.png" alt="字面量"></p>
+<p><img src="/Python-Learning/type.png" alt="字面量"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 666 and 13.14 &quot;TEST&quot; are literals</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># int literal</span></span><br><span class="line"><span class="number">666</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># float literal</span></span><br><span class="line"><span class="number">13.14</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># string literal</span></span><br><span class="line"><span class="string">&quot;TEST&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="number">666</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="number">13.14</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;TEST&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">This is multiline comment</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 
+<ol>
+<li><p>Python 多行注释不支持嵌套，所以下面的写法是错误的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">外层注释</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    内层注释</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#x27;&#x27;&#x27;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不管是多行注释还是单行注释，当注释符作为字符串的一部分出现时，就不能再将它们视为注释标记，而应该看做正常代码的一部分</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;&#x27;Hello,World!&#x27;&#x27;&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;&quot;http://c.biancheng.net/cplus/&quot;&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;#是单行注释的开始&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
+<p>运行结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hello,World!</span><br><span class="line">http://c.biancheng.net/cplus/</span><br><span class="line">#是单行注释的开始</span><br></pre></td></tr></table></figure>
 
 
 
